@@ -14,10 +14,14 @@
     "baseUrl": ".",
     "types": [
       "webpack-env",
-      "jest"
+      "jest",
+      "./src/types"
     ],
     "paths": {
       "@/*": [
+        "src/*"
+      ],
+      "~/*": [
         "src/*"
       ]
     },

@@ -1,18 +1,34 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+    <circle-chart
+      :chart="chart"
+      :width="400"
+      :height="400"
+      :chart-width="60"
+    />
+
+    <input
+      v-model="newValue"
+      type="number"
+    />
+
+    <button @click="addValue">Add</button>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
+<script setup lang="ts">
+import { ref, defineAsyncComponent, Ref } from 'vue';
+const CircleChart = defineAsyncComponent(
+  () => import('~/components/charts/CircleChart.vue')
+);
 
-export default defineComponent({
-  name: "HomeView",
-  components: {
-    HelloWorld,
-  },
-});
+const chart: Ref<Array<{ value: number; title: string }>> = ref([]);
+
+const newValue = ref(0);
+
+function addValue() {
+  chart.value.push({ value: newValue.value, title: '' });
+
+  newValue.value = 0;
+}
 </script>
