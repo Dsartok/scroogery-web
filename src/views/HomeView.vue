@@ -4,16 +4,8 @@
       :chart="chart"
       :width="400"
       :height="400"
-      :radius="100"
-      :chart-width="60"
+      :radius="180"
       is-full-arc
-    />
-    <circle-chart
-      :chart="chart"
-      :width="400"
-      :height="400"
-      :radius="100"
-      :chart-width="60"
     />
   </div>
 </template>
@@ -31,3 +23,10 @@ const chart: Ref<Array<{ value: number; title: string }>> = ref([
   { value: 80000, title: '80k' }
 ]);
 </script>
+
+<style lang="scss">
+.home {
+  display: flex;
+  flex-flow: row nowrap;
+}
+</style>
