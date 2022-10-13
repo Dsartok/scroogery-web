@@ -7,14 +7,6 @@ export type DiagramArc = {
    */
   name: string;
   /**
-   * x position of arc
-   */
-  x: number;
-  /**
-   * y position of arc
-   */
-  y: number;
-  /**
    * radius of entire circle
    */
   radius: number;
@@ -30,8 +22,4 @@ export type DiagramArc = {
    * arc color
    */
   color: string;
-  /**
-   * use full arc fill or just stroke
-   */
-  isFull?: boolean;
 };
